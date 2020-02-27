@@ -1,4 +1,5 @@
 import random
+import time
 
 def end_menu():
 
@@ -14,6 +15,14 @@ def end_menu():
 
 def game():
 
+    print(" ")
+    print("Welcome to Rock, Paper, Scissors.")
+    time.sleep(1)
+    print("First to 3 wins")
+    time.sleep(1)
+    print("Good Luck :)")
+    time.sleep(1)
+
     player_pts = 0
     opponent_pts = 0
 
@@ -23,8 +32,9 @@ def game():
 
         while True:
             try:
-                print("[1:Rock] [2:Paper] [3:Scissors]")
-                player = int(input(" "))
+                print(" ")
+                player = int(input("[1:Rock] [2:Paper] [3:Scissors]: "))
+                print(" ")
                 break
             except:
                 print("Input a number")
@@ -32,7 +42,7 @@ def game():
         if player == opponent:
             pass
 
-        if player == 1 and opponent == 2:
+        elif player == 1 and opponent == 2:
             opponent_pts += 1
 
         elif player == 1 and opponent == 3:
@@ -50,14 +60,26 @@ def game():
         elif player == 3 and opponent == 1:
             opponent_pts += 1
 
-        if opponent == 1:
-            translate = "Rock O"
-        elif opponent == 2:
-            translate = "Paper [ ]"
+        if player == 1:
+            player_tran = "Rock O"
+        elif player == 2:
+            player_tran = "Paper [ ]"
         else:
-            translate = "Scissors 8<"
+            player_tran = "Scissors 8<"
+
+        if opponent == 1:
+            opponent_tran = "Rock O"
+        elif opponent == 2:
+            opponent_tran = "Paper [ ]"
+        else:
+            opponent_tran = "Scissors 8<"
         
-        print(f"Opponent: {translate}")
+        print(f"You: {player_tran}               pts: {player_pts}")
+        print(f"Opponent: {opponent_tran}          pts: {opponent_pts}")
+
+    print(" ")
+
+    time.sleep(1)
 
     if player_pts > opponent_pts:
         print("YOU WIN!")
