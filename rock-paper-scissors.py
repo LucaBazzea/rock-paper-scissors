@@ -33,11 +33,11 @@ def game():
         while True:
             try:
                 print(" ")
-                player = int(input("[1:Rock] [2:Paper] [3:Scissors]: "))
+                player = int(input("1-Rock Ø    2-Paper [ ]    3-Scissors 8< : "))
                 print(" ")
                 break
             except:
-                print("Input a number")
+                print("Input 1, 2 or 3")
     
         if player == opponent:
             pass
@@ -49,7 +49,7 @@ def game():
             player_pts += 1
 
         elif player == 2 and opponent == 1:
-            opponent_pts += 1
+            player_pts += 1
 
         elif player == 2 and opponent == 3:
             opponent_pts += 1
@@ -61,14 +61,14 @@ def game():
             opponent_pts += 1
 
         if player == 1:
-            player_tran = "Rock O"
+            player_tran = "Rock Ø"
         elif player == 2:
             player_tran = "Paper [ ]"
         else:
             player_tran = "Scissors 8<"
 
         if opponent == 1:
-            opponent_tran = "Rock O"
+            opponent_tran = "Rock Ø"
         elif opponent == 2:
             opponent_tran = "Paper [ ]"
         else:
