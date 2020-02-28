@@ -1,5 +1,10 @@
 import random
 import time
+import os
+
+def clear():
+
+    os.system( 'cls' )
 
 def end_menu():
 
@@ -26,12 +31,16 @@ def game():
     player_pts = 0
     opponent_pts = 0
 
+    round = 1
+    
     while player_pts < 3 and opponent_pts < 3:
-        
+
         opponent = random.randint(1,3)
 
         while True:
             try:
+                print(" ")
+                print(f"---Round {round}---")
                 print(" ")
                 player = int(input("1-Rock Ø    2-Paper [ ]    3-Scissors 8< : "))
                 print(" ")
@@ -76,6 +85,12 @@ def game():
         
         print(f"You: {player_tran}               pts: {player_pts}")
         print(f"Opponent: {opponent_tran}          pts: {opponent_pts}")
+
+        round += 1
+        
+        #time.sleep(2)
+        #clear()
+
 
     print(" ")
 
